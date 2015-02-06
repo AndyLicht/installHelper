@@ -1,0 +1,6 @@
+name = Install Helper
+description = Mit diesem Modul koennen Contenttyp-Felder einfacher angelegt werden
+core = 7.x
+package = andylicht
+dependencies[] = geofield
+dependencies[] = field_collection

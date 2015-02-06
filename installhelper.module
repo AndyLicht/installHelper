@@ -1,0 +1,4 @@
+<?php
+module_load_include('inc','installhelper','installhelper.getFields');
+module_load_include('inc','installhelper','installhelper.getInstances');
+
