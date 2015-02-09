@@ -209,3 +209,152 @@ function installHelper_getInstance_Geometry($t,$name,$label,$bundle,$entity_type
     );
     return $instance;
 }                                                                      
+
+ 
+//GIS
+function installHelper_getInstance_Point($t,$name,$label,$bundle,$entity_type,$description,$labeldisplay)
+{
+    $instance = array(
+        'label' => $t($label),
+        'module' => 'geofield',
+        'weight' => 1,
+        'required' => 0,
+        'description' => $description,
+        'default_value' => NULL,
+        'field_name' => $name,
+        'entity_type' => $entity_type,
+        'bundle' => $bundle,
+        'deleted' => '0',
+        'widget' => array(
+            'weight' => '-3',
+            'type' => 'geofield_latlon',
+            'module' => 'geofield',
+            'active' => 1,
+            'settings' => array(
+                'html5_geolocation' => 0,
+            ),
+        ),
+        'settings' => array(
+            'user_register_form' => FALSE,
+        ),
+        'display' => array(
+            'default' => array(
+                'label' => $labeldisplay,
+                'type' => 'geofield_wkt',
+                'settings' => array(
+                    'data' => 'full',
+                ),
+            ),
+            'teaser' => array(
+                'type' => 'hidden',
+                'label' => $labeldisplay,
+                'settings' => array(),
+                'weight' => 0,
+            ),
+        ),        
+    );
+    return $instance;
+}
+ 
+//Link
+function installHelper_getInstance_Link($t,$name,$label,$bundle,$entity_type,$description,$labeldisplay)
+{
+    $instance = array(
+        'label' => $t($label),
+        'required' => 0,
+        'description' => $description,
+        'default_value' => NULL,
+        'field_name' => $name,
+        'entity_type' => $entity_type,
+        'bundle' => $bundle,
+        'deleted' => '0',
+        'widget' => array(
+            'weight' => 0,
+            'type' => 'link_field',
+            'module' => 'link',
+            'active' => 0,
+            'settings' => array(),
+        ),
+        'settings' => array(
+            'validate_url' => 1,
+            'url' => 0,
+            'title' => 'optional',
+            'title_value' => '',
+            'title_maxlength' => '128',
+            'display' => array(
+                'url_cutoff' => '80',
+            ),
+            'attributes' => array(
+                'target' => 'default',
+                'rel' => '',
+                'class' => '',
+                'configurable_title' => 0,
+                'title' => '',
+            ),
+            'rel_remove' => 'default',
+            'enable_tokens' => 1,
+            'user_register_form' => FALSE,
+        ),
+        'display' => array(
+            'default' => array(
+                'label' => $labeldisplay,
+                'type' => 'link_default',
+                'settings' => array(),
+                'module' => 'link',
+                'weight' => 4,
+            ),
+            'teaser' => array(
+                'type' => 'hidden',
+                'label' => $labeldisplay,
+                'settings' => array(),
+                'weight' => 0,
+            ),
+        ),
+    );
+    return $instance;
+};
+ 
+//Reference
+function installHelper_getInstance_Reference($t,$name,$label,$bundle,$entity_type,$description,$labeldisplay)
+{
+    $instance = array(
+        'label' => $t($label),
+        'required' => 0,
+        'description' => $description,
+        'default_value' => NULL,
+        'field_name' => $name,
+        'entity_type' => $entity_type,
+        'bundle' => $bundle,
+        'deleted' => '0',
+        'widget' => array(
+            'weight' => '17',
+            'type' => 'node_reference_autocomplete',
+            'module' => 'node_reference',
+            'active' => 1,
+            'settings' => array(
+                'autocomplete_match' => 'contains',
+                'size' => '60',
+                'autocomplete_path' => 'node_reference/autocomplete',
+            ),
+        ),
+        'settings' => array(
+            'user_register_form' => FALSE,
+        ),
+        'display' => array(
+            'default' => array(
+                'label' => $labeldisplay,
+                'type' => 'node_reference_default',
+                'settings' => array(),
+                'module' => 'node_reference',
+                'weight' => 23,
+            ),
+            'teaser' => array(
+                'type' => 'hidden',
+                'label' => $labeldisplay,
+                'settings' => array(),
+                'weight' => 0,
+            ),
+        ),  
+    );
+    return $instance;
+};
