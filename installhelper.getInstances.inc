@@ -1,6 +1,6 @@
 <?php
 //Instance für ein einfaches Textfeld
-function installHelper_getInstance_shortText($t,$name,$label,$bundle,$entity_type,$description)
+function installHelper_getInstance_shortText($t,$name,$label,$bundle,$entity_type,$description,$displaylabel)
 {
    $instance= array(
        'field_name' => $name,
@@ -12,7 +12,7 @@ function installHelper_getInstance_shortText($t,$name,$label,$bundle,$entity_typ
        ),
        'display' => array(
            'default' => array(
-               'label' => 'above',
+               'label' => $displaylabel,
                'type' => 'text',
            ),
        ),
@@ -21,7 +21,7 @@ function installHelper_getInstance_shortText($t,$name,$label,$bundle,$entity_typ
    return $instance;
 }
 //Instance für ein langes Textfeld
-function installHelper_getInstance_longText($t,$name,$label,$bundle,$entity_type,$description)
+function installHelper_getInstance_longText($t,$name,$label,$bundle,$entity_type,$description,$displaylabel)
 {
    $instance= array(
        'field_name' => $name,
@@ -33,7 +33,7 @@ function installHelper_getInstance_longText($t,$name,$label,$bundle,$entity_type
        ),
        'display' => array(
            'default' => array(
-               'label' => 'above',
+               'label' => $displaylabel,
                'type' => 'text_long',
            ),
        ),
@@ -44,7 +44,7 @@ function installHelper_getInstance_longText($t,$name,$label,$bundle,$entity_type
  
  
 //Instance für eine einfache FieldCollection
-function installHelper_getInstance_FieldCollection($t,$name,$label,$bundle,$entity_type,$description)
+function installHelper_getInstance_FieldCollection($t,$name,$label,$bundle,$entity_type,$description,$displaylabel)
 {
    $instance = array(
        'field_name' => $name,
@@ -56,7 +56,7 @@ function installHelper_getInstance_FieldCollection($t,$name,$label,$bundle,$enti
        ),
        'display' => array(
            'default' => array(
-               'label' => 'above',
+               'label' => $displaylabel,
                'type' => 'field_collection_items',
            ),
        ),
@@ -65,7 +65,7 @@ function installHelper_getInstance_FieldCollection($t,$name,$label,$bundle,$enti
 return $instance;
 }
 //Instance für ein Taxonomyfeld
-function installHelper_getInstance_TermRef($t,$name,$label,$bundle,$entity_type,$description)
+function installHelper_getInstance_TermRef($t,$name,$label,$bundle,$entity_type,$description,$displaylabel)
 {
    $instance = array(
        'field_name' => $name,
@@ -86,7 +86,7 @@ return $instance;
  
  
 //Instance für ein einfaches Booleanfeld
-function installHelper_getInstance_Boolean($t,$name,$label,$bundle,$entity_type,$description)
+function installHelper_getInstance_Boolean($t,$name,$label,$bundle,$entity_type,$description,$displaylabel)
 {
    $instance = array(
        'field_name' => $name,
@@ -100,7 +100,7 @@ function installHelper_getInstance_Boolean($t,$name,$label,$bundle,$entity_type,
            'active' => 1,
        ),
        'display' => array(
-           'default' => array('type' => 'above'),
+           'default' => array('type' => $displaylabel),
        ),
        'description' => $description,
    );
@@ -108,7 +108,7 @@ return $instance;
 }
  
 //Instance für ein einfaches Integerfeld
-function installHelper_getInstance_Integer($t,$name,$label,$bundle,$entity_type,$description)
+function installHelper_getInstance_Integer($t,$name,$label,$bundle,$entity_type,$description,$displaylabel)
 {
    $instance = array(
        'field_name' => $name,
@@ -119,7 +119,7 @@ function installHelper_getInstance_Integer($t,$name,$label,$bundle,$entity_type,
            'type'    => 'number',
        ),
        'display' => array(
-           'default' => array('type' => 'above'),
+           'default' => array('type' => $displaylabel),
        ),
        'description' => $description,
    );
@@ -127,7 +127,7 @@ return $instance;
 }
  
 //Instance für ein einfaches Integerfeld
-function installHelper_getInstance_Decimal($t,$name,$label,$bundle,$entity_type,$description)
+function installHelper_getInstance_Decimal($t,$name,$label,$bundle,$entity_type,$description,$displaylabel)
 {
    $instance = array(
        'field_name' => $name,
@@ -138,7 +138,7 @@ function installHelper_getInstance_Decimal($t,$name,$label,$bundle,$entity_type,
            'type'    => 'number',
        ),
        'display' => array(
-           'default' => array('type' => 'above'),
+           'default' => array('type' => $displaylabel),
        ),
        'description' => $description,
    );
@@ -146,7 +146,7 @@ return $instance;
 }
  
 //Image
-function installHelper_getInstance_Image($t,$name,$label,$bundle,$entity_type,$description)
+function installHelper_getInstance_Image($t,$name,$label,$bundle,$entity_type,$description,$displaylabel)
 {
         $instance = array(
                 'field_name' => $name,
@@ -157,7 +157,7 @@ function installHelper_getInstance_Image($t,$name,$label,$bundle,$entity_type,$d
                         'type'    => 'image_image',
                 ),
                 'display' => array(
-                        'default' => array('type' => 'above'),
+                        'default' => array('type' => $displaylabel),
                 ),
  
                 'description' => $description,
@@ -166,7 +166,7 @@ return $instance;
 }
  
 //GIS
-function installHelper_getInstance_Geometry($t,$name,$label,$bundle,$entity_type,$description)
+function installHelper_getInstance_Geometry($t,$name,$label,$bundle,$entity_type,$description,$displaylabel)
 {
     $instance = array(
         'label' => $t($label),
@@ -193,7 +193,7 @@ function installHelper_getInstance_Geometry($t,$name,$label,$bundle,$entity_type
         ),
         'display' => array(
             'default' => array(
-                'label' => 'above',
+                'label' => $displaylabel,
                 'type' => 'geofield_wkt',
                 'settings' => array(
                     'data' => 'full',
@@ -201,7 +201,7 @@ function installHelper_getInstance_Geometry($t,$name,$label,$bundle,$entity_type
             ),
             'teaser' => array(
                 'type' => 'hidden',
-                'label' => 'above',
+                'label' => $displaylabel,
                 'settings' => array(),
                 'weight' => 0,
             ),
