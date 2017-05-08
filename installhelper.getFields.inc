@@ -26,7 +26,7 @@ function installHelper_getField_longText($t,$name,$label,$count)
 }
  
 //FieldCollection
-function installHelper_getField_FieldCollection($t,$name,$label,$count)
+/*function installHelper_getField_FieldCollection($t,$name,$label,$count)
 {
     $field = array(
         'field_name' => $name,
@@ -35,7 +35,7 @@ function installHelper_getField_FieldCollection($t,$name,$label,$count)
         'type' => 'field_collection',
     );
     return $field;
-}
+}*/
  
 //Terms
 function installHelper_getField_TermRef($t,$name,$label,$count,$vocabular)

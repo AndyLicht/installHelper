@@ -44,7 +44,7 @@ function installHelper_getInstance_longText($t,$name,$label,$bundle,$entity_type
  
  
 //Instance für eine einfache FieldCollection
-function installHelper_getInstance_FieldCollection($t,$name,$label,$bundle,$entity_type,$description,$displaylabel)
+/*function installHelper_getInstance_FieldCollection($t,$name,$label,$bundle,$entity_type,$description,$displaylabel)
 {
    $instance = array(
        'field_name' => $name,
@@ -63,7 +63,7 @@ function installHelper_getInstance_FieldCollection($t,$name,$label,$bundle,$enti
        'description' => $description,
    );
 return $instance;
-}
+}*/
 //Instance für ein Taxonomyfeld
 function installHelper_getInstance_TermRef($t,$name,$label,$bundle,$entity_type,$description,$displaylabel)
 {
